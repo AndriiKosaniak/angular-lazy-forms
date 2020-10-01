@@ -1,0 +1,24 @@
+<select name="users" id="users-select" (change)="getUser()" [(ngModel)]="selectedId">
+    <option *ngFor="let option of usersID">{{option}}</option>
+</select>
+
+<div *ngIf="user">
+
+    <form [formGroup]="form" (submit)="submitFunction()" >
+        <input type="text" formControlName="name">
+         <p *ngIf="form.get('name').hasError('required')"> Enter the name</p>
+
+        <br>
+        <input type="text" formControlName="username"> <br>
+        <input type="text" formControlName="address"> <br>
+        <input type="text" formControlName="email"> <br>
+        <input type="text" formControlName="id"> <br>
+
+
+        <button type="submit" [disabled]="form.invalid">Submit</button>
+    </form>
+</div>
+
+<div>
+    <input type="text" [(ngModel)]="aloneField">
+</div>

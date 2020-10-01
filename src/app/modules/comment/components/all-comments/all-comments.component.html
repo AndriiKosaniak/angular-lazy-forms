@@ -1,0 +1,6 @@
+<button (click)="navigateFromComments('users/posts/' + userId)">Back</button>
+<div *ngFor="let comment of comments" class="blue">
+  <p>{{comment.name}}</p>
+  <p>{{comment.email}}</p>
+  <p>{{comment.body}}</p>
+</div>

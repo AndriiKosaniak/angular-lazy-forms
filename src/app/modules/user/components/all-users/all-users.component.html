@@ -1,0 +1,22 @@
+<div class="d-flex flex-wrap ">
+    <div>
+        <div *ngFor="let user of users" class="red col-3 mx-2">
+            <p>{{user.name}}</p>
+            <p>{{user.username}}</p>
+            <p>{{user.id}}</p>
+            <p>{{user.email}}</p>
+            <p>{{user.address}}</p>
+            <button routerLink="/users/posts/{{user.id}}" [state]="{id: user.id}">Get User Posts</button>
+        </div>
+    </div>
+
+    <div class="col-8 mx-2">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+
+
+
+
+
